@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TheGuardian Reader</string>
+
+    <string name="news_label">News</string>
+    <string name="opinion_label">Opinion</string>
+    <string name="sport_label">Sport</string>
+    <string name="culture_label">Culture</string>
+    <string name="lifestyle_label">Lifestyle</string>
+</resources>

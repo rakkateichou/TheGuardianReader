@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TheGuardianReader" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/brand_main</item>
+        <item name="colorPrimaryDark">@android:color/darker_gray</item>
+        <item name="colorPrimaryVariant">@color/brand_dark</item>
+        <item name="colorOnPrimary">@color/brightness_100</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/brand_pastel</item>
+        <item name="colorSecondaryVariant">@color/brand_main</item>
+        <item name="colorOnSecondary">@color/brightness_100</item>
+        <!-- Status bar color. -->
+<!--        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>-->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimarySurface</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/RobotoSlabStyle</item>
+    </style>
+
+    <style name="RobotoSlabStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/robotoslab</item>
+    </style>
+</resources>

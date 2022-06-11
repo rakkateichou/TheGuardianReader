@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_dark">#041f4a</color>
+    <color name="brand_main">#052962</color>
+    <color name="brand_pastel">#506991</color>
+
+    <color name="highlight_main">#ffe500</color>
+    <color name="highlight_dark">#ffbb50</color>
+
+<!--to make status bar consistent with action bar in dark mode-->
+    <color name="dark_status">#282828</color>
+
+    <color name="brightness_7">#121212</color>
+    <color name="brightness_20">#333333</color>
+    <color name="brightness_46">#767676</color>
+    <color name="brightness_60">#999999</color>
+    <color name="brightness_86">#dcdcdc</color>
+    <color name="brightness_93">#ededed</color>
+    <color name="brightness_97">#f6f6f6</color>
+    <color name="brightness_100">#ffffff</color>
+
+    <color name="special_report_dark">#3f464a</color>
+    <color name="labs_dark">#4B8878</color>
+    <color name="labs_main">#69d1ca</color>
+    <color name="green_dark">#236925</color>
+    <color name="green_main">#3db540</color>
+
+    <color name="news_dark">#ab0613</color>
+    <color name="news_main">#c70000</color>
+    <color name="news_bright">#ff4e36</color>
+    <color name="news_pastel">#ffbac8</color>
+    <color name="news_faded">#fff4f2</color>
+
+    <color name="opinion_dark">#bd5318</color>
+    <color name="opinion_main">#e05e00</color>
+    <color name="opinion_bright">#ff7f0f</color>
+    <color name="opinion_pastel">#f9b376</color>
+    <color name="opinion_faded">#fef9f5</color>
+
+    <color name="sport_dark">#005689</color>
+    <color name="sport_main">#0084c6</color>
+    <color name="sport_bright">#00b2ff</color>
+    <color name="sport_pastel">#90dcff</color>
+    <color name="sport_faded">#f1f8fc</color>
+
+    <color name="culture_dark">#6b5840</color>
+    <color name="culture_main">#a1845c</color>
+    <color name="culture_bright">#eacca0</color>
+    <color name="culture_pastel">#e7d4b9</color>
+    <color name="culture_faded">#fbf6ef</color>
+
+    <color name="lifestyle_dark">#7d0068</color>
+    <color name="lifestyle_main">#bb3b80</color>
+    <color name="lifestyle_bright">#ffabdb</color>
+    <color name="lifestyle_pastel">#fec8d3</color>
+    <color name="lifestyle_faded">#feeef7</color>
+</resources>
