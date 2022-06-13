@@ -14,6 +14,7 @@ import com.rakkateichou.theguardianreader.TheGuardianReaderApp
 import com.rakkateichou.theguardianreader.util.changeSelectedColor
 import com.rakkateichou.theguardianreader.databinding.ActivityMainBinding
 import com.rakkateichou.theguardianreader.data.model.Section
+import com.rakkateichou.theguardianreader.util.findInViewPager
 import com.rakkateichou.theguardianreader.util.isNightMode
 import javax.inject.Inject
 
@@ -57,8 +58,11 @@ class MainActivity : AppCompatActivity() {
                     mainViewModel.setCurrentSection(currentSection)
                 }
 
-                override fun onTabUnselected(tab: TabLayout.Tab?) {}
-                override fun onTabReselected(tab: TabLayout.Tab?) {}
+                override fun onTabUnselected(tab: TabLayout.Tab) {}
+                override fun onTabReselected(tab: TabLayout.Tab) {
+                    (supportFragmentManager.findInViewPager(tab.position) as SectionFragment)
+                        .updateNews()
+                }
 
             })
 //             reselecting current tab to the first one to update colors

@@ -35,9 +35,15 @@ class SectionFragment(private val section: Section) : Fragment(R.layout.fragment
             sectionRv.adapter = adapter
         }
 
-        viewModel.fetchNews(section).observe(viewLifecycleOwner) {
+        updateNews()
+        viewModel.news.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
+    }
+
+    fun updateNews() {
+        viewModel.fetchNews(section)
+        binding.sectionRv.smoothScrollToPosition(0)
     }
 
     override fun onDestroy() {

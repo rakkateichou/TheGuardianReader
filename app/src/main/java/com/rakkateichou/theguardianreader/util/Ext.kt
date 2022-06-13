@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.annotation.ColorRes
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.google.android.material.tabs.TabLayout
 import com.rakkateichou.theguardianreader.R
 
@@ -18,3 +20,6 @@ fun TabLayout.changeSelectedColor(@ColorRes color: Int) {
 
 fun Context.isNightMode(): Boolean =
     resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+
+fun FragmentManager.findInViewPager(position: Int): Fragment? =
+    findFragmentByTag("f$position")
