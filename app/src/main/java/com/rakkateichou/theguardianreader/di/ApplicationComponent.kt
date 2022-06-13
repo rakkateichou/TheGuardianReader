@@ -2,6 +2,7 @@ package com.rakkateichou.theguardianreader.di
 
 import com.rakkateichou.theguardianreader.ui.main.MainActivity
 import com.rakkateichou.theguardianreader.ui.main.SectionFragment
+import com.rakkateichou.theguardianreader.ui.main.SectionViewModel
 import dagger.Component
 import javax.inject.Singleton
 
@@ -9,5 +10,5 @@ import javax.inject.Singleton
 @Component(modules = [NetworkModule::class])
 interface ApplicationComponent {
     fun inject(activity: MainActivity)
-    fun inject(fragment: SectionFragment)
+    fun inject(viewModel: SectionViewModel)
 }

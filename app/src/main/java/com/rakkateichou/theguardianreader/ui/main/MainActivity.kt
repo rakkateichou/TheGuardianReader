@@ -39,7 +39,10 @@ class MainActivity : AppCompatActivity() {
             window.statusBarColor = ResourcesCompat.getColor(resources, R.color.dark_status, null)
         }
 
-        binding.mainViewPager.adapter = CategoryPagerAdapter(this)
+        binding.mainViewPager.apply {
+            adapter = CategoryPagerAdapter(this@MainActivity)
+            offscreenPageLimit = Section.values().size - 1
+        }
 
         TabLayoutMediator(binding.mainTabLayout, binding.mainViewPager) { tab, position ->
             tab.text = Section.fromInt(position)?.name ?: DEFAULT_SECTION.name
@@ -51,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onTabSelected(tab: TabLayout.Tab) {
                     val currentSection = Section.fromInt(tab.position) ?: DEFAULT_SECTION
                     changeSelectedColor(currentSection.mainColor)
-                    mainViewModel.fetchSection(currentSection)
+                    mainViewModel.setCurrentSection(currentSection)
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {}

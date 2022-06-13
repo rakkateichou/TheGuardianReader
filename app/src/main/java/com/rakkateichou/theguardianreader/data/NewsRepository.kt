@@ -11,9 +11,6 @@ import javax.inject.Singleton
 
 @Singleton
 class NewsRepository @Inject constructor(private val remoteNewsSource: RemoteNewsSource){
-//    suspend fun fetchSection(section: Section, page: Int): NewsListResult {
-//        return remoteNewsSource.fetchSection(section, page)
-//    }
 
     fun getSectionLiveData(section: Section) =
         Pager(
