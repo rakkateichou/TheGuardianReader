@@ -4,7 +4,7 @@ import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.rakkateichou.theguardianreader.Constants.DEFAULT_SECTION
-import com.rakkateichou.theguardianreader.api.NewsEntry
+import com.rakkateichou.theguardianreader.data.model.NewsEntry
 import com.rakkateichou.theguardianreader.data.NewsRepository
 import com.rakkateichou.theguardianreader.data.model.Section
 import javax.inject.Inject

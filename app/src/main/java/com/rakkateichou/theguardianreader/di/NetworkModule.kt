@@ -21,8 +21,13 @@ class NetworkModule {
     fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->
             val original = chain.request()
-            val apiKey = BuildConfig.API_KEY
-            val url = original.url().newBuilder().addQueryParameter("api-key", apiKey).build()
+            val url = original.url().newBuilder()
+                .addQueryParameter("order-by", "relevance") // order by relevance by default
+                .addQueryParameter("show-fields",
+                    "headline,byline,commentable,liveBloggingNow") // additional info fields
+                .addQueryParameter("show-tags", "tone") // a way to determine importance of the story
+                .addQueryParameter("api-key", BuildConfig.API_KEY) // api key
+                .build()
             val new = original.newBuilder().url(url).build()
             return@addInterceptor chain.proceed(new)
         }
@@ -39,14 +44,14 @@ class NetworkModule {
                 annotations: Array<out Annotation>,
                 retrofit: Retrofit
             ): Converter<*, String>? {
-                if (hasIdOfSection(annotations)) {
+                if (annotations.hasIdOfSection()) {
                     return Converter<Section, String> { value -> value.id }
                 }
                 return super.stringConverter(type, annotations, retrofit)
             }
 
-            fun hasIdOfSection(annotations: Array<out Annotation>): Boolean {
-                for (annotation in annotations) {
+            fun Array<out Annotation>.hasIdOfSection(): Boolean {
+                for (annotation in this) {
                     if (annotation is IdOfSection) return true
                 }
                 return false

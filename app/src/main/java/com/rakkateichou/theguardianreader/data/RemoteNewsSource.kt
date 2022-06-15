@@ -2,7 +2,7 @@ package com.rakkateichou.theguardianreader.data
 
 import com.rakkateichou.theguardianreader.Constants.DEFAULT_PAGE_SIZE
 import com.rakkateichou.theguardianreader.data.model.Section
-import com.rakkateichou.theguardianreader.api.NewsEntry
+import com.rakkateichou.theguardianreader.data.model.NewsEntry
 import com.rakkateichou.theguardianreader.api.NewsApi
 import javax.inject.Inject
 

@@ -5,7 +5,6 @@ import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.rakkateichou.theguardianreader.Constants.DEFAULT_PAGE_SIZE
 import com.rakkateichou.theguardianreader.data.model.Section
-import com.rakkateichou.theguardianreader.api.NewsEntry
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -1,5 +1,6 @@
 package com.rakkateichou.theguardianreader.api
 
+import com.rakkateichou.theguardianreader.data.model.NewsResponse
 import com.rakkateichou.theguardianreader.data.model.Section
 import com.rakkateichou.theguardianreader.di.IdOfSection
 import retrofit2.Response

@@ -2,7 +2,7 @@ package com.rakkateichou.theguardianreader.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.rakkateichou.theguardianreader.api.NewsEntry
+import com.rakkateichou.theguardianreader.data.model.NewsEntry
 import com.rakkateichou.theguardianreader.data.model.Section
 
 class GuardianPagingSource(
