@@ -18,7 +18,7 @@ data class NewsInnerResponse(
 
 data class NewsEntry(
     val apiUrl: String,
-    val fields: Fields,
+    val fields: Fields?,
     val id: String,
     val isHosted: Boolean,
     val pillarId: String,
@@ -33,15 +33,17 @@ data class NewsEntry(
 )
 
 data class Fields(
-    val byline: String,
-    val commentable: String,
-    val headline: String
+    val headline: String?,
+    val byline: String?,
+    val thumbnail: String?,
+    val commentable: String?,
+    val liveBloggingNow: Boolean?
 )
 
 data class Tag(
     val apiUrl: String,
     val id: String,
-    val references: List<Any>,
+    val references: List<String>,
     val type: String,
     val webTitle: String,
     val webUrl: String

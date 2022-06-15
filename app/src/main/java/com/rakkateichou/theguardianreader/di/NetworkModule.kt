@@ -24,7 +24,7 @@ class NetworkModule {
             val url = original.url().newBuilder()
                 .addQueryParameter("order-by", "relevance") // order by relevance by default
                 .addQueryParameter("show-fields",
-                    "headline,byline,commentable,liveBloggingNow") // additional info fields
+                    "headline,byline,thumbnail,commentable,liveBloggingNow") // additional info fields
                 .addQueryParameter("show-tags", "tone") // a way to determine importance of the story
                 .addQueryParameter("api-key", BuildConfig.API_KEY) // api key
                 .build()
