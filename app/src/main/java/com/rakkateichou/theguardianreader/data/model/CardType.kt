@@ -37,6 +37,6 @@ enum class CardType(
             return if (hasThumbnail) MEDIUM.ordinal else SMALL.ordinal
         }
 
-        val DEFAULT_VIEW_TYPE = MEDIUM.ordinal
+        val DEFAULT_VIEW_TYPE = SMALL.ordinal
     }
 }
