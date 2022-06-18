@@ -62,6 +62,8 @@ dependencies {
 
     // Images
     implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
 
     // Core and material components
     implementation 'androidx.core:core-ktx:1.8.0'

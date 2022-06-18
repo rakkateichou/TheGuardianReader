@@ -26,6 +26,7 @@ class NetworkModule {
                 .addQueryParameter("show-fields",
                     "headline,byline,thumbnail,commentable,liveBloggingNow") // additional info fields
                 .addQueryParameter("show-tags", "tone") // a way to determine importance of the story
+                .addQueryParameter("show-blocks", "all") // show blocks that contains html code
                 .addQueryParameter("api-key", BuildConfig.API_KEY) // api key
                 .build()
             val new = original.newBuilder().url(url).build()

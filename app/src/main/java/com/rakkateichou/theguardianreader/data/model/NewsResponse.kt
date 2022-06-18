@@ -18,6 +18,7 @@ data class NewsInnerResponse(
 
 data class NewsEntry(
     val apiUrl: String,
+    val blocks: Blocks,
     val fields: Fields?,
     val id: String,
     val isHosted: Boolean,
@@ -47,4 +48,32 @@ data class Tag(
     val type: String,
     val webTitle: String,
     val webUrl: String
+)
+
+data class Blocks(
+    val body: List<Body>,
+    val main: Main,
+    val totalBodyBlocks: Int
+)
+
+data class Body(
+    val bodyHtml: String,
+    val bodyTextSummary: String,
+    val createdDate: String,
+    val firstPublishedDate: String,
+    val id: String,
+    val lastModifiedDate: String,
+    val published: Boolean,
+    val publishedDate: String
+)
+
+data class Main(
+    val bodyHtml: String,
+    val bodyTextSummary: String,
+    val createdDate: String,
+    val firstPublishedDate: String,
+    val id: String,
+    val lastModifiedDate: String,
+    val published: Boolean,
+    val publishedDate: String
 )

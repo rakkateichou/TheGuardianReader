@@ -29,11 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUi() {
-        // to make status bar consistent with action bar in dark mode
-        if (isNightMode()) {
-            window.statusBarColor = ResourcesCompat.getColor(resources, R.color.dark_top, null)
-        }
-
         supportFragmentManager.apply {
             findFragmentByTag(MAIN_FRAGMENT_TAG) ?: beginTransaction()
                 .add(binding.mainFragmentContainer.id, MainFragment(), MAIN_FRAGMENT_TAG)

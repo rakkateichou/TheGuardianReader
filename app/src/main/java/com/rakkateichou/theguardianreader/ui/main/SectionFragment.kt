@@ -10,7 +10,7 @@ import com.rakkateichou.theguardianreader.R
 import com.rakkateichou.theguardianreader.TheGuardianReaderApp
 import com.rakkateichou.theguardianreader.data.model.Section
 import com.rakkateichou.theguardianreader.databinding.FragmentSectionBinding
-import timber.log.Timber
+import com.rakkateichou.theguardianreader.ui.article.ArticleFragment
 
 class SectionFragment : Fragment(R.layout.fragment_section) {
 
@@ -33,7 +33,16 @@ class SectionFragment : Fragment(R.layout.fragment_section) {
         // so the only way to know in which position the fragment is from the tag
         section = Section.fromInt(tag!![1].digitToInt())?: DEFAULT_SECTION
 
-        val adapter = NewsAdapter(section)
+        val adapter = NewsAdapter(section) { newsEntry, cardType ->
+            requireActivity().supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    android.R.anim.fade_in, android.R.anim.fade_out,
+                    android.R.anim.fade_in, android.R.anim.fade_out
+                )
+                .add(R.id.main_fragment_container, ArticleFragment(newsEntry, cardType))
+                .addToBackStack("")
+                .commit()
+        }
 
         binding.apply {
             sectionRv.setHasFixedSize(true)

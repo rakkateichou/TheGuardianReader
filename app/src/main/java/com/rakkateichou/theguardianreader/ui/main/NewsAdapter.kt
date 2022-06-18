@@ -19,7 +19,7 @@ import com.rakkateichou.theguardianreader.databinding.SmallNewsCardBinding
 import com.rakkateichou.theguardianreader.util.isNightMode
 import kotlin.random.Random
 
-class NewsAdapter(private val section: Section) :
+class NewsAdapter(private val section: Section, private val onClick: (NewsEntry, CardType) -> Unit) :
     PagingDataAdapter<NewsEntry, NewsAdapter.NewsViewHolder>(NEWS_COMPARATOR) {
 
     inner class NewsViewHolder(
@@ -37,6 +37,8 @@ class NewsAdapter(private val section: Section) :
                 if (binding.root.context.isNightMode()) Color.WHITE else Color.BLACK
 
             val random = Random.nextInt(100).toString()
+
+            binding.root.setOnClickListener { onClick(news, cardType) }
 
             when (cardType) {
                 CardType.SMALL -> {

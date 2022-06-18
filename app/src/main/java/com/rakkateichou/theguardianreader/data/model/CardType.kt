@@ -31,7 +31,7 @@ enum class CardType(
             lastId?.let {
                 values().forEach { type ->
                     if (lastId in type.toneIds && hasThumbnail)
-                        return type.ordinal
+                        return type.ordinal // todo figure it out through the main block
                 }
             }
             return if (hasThumbnail) MEDIUM.ordinal else SMALL.ordinal

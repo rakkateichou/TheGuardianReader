@@ -12,7 +12,7 @@
         <item name="colorOnSecondary">@color/brightness_100</item>
         <!-- Status bar color. -->
 <!--        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimarySurface</item>
+        <item name="android:statusBarColor" >?attr/colorPrimarySurface</item>
 <!--        <item name="android:windowTranslucentStatus">true</item>-->
         <!-- Customize your theme here. -->
         <item name="android:textViewStyle">@style/RobotoSlabStyle</item>
