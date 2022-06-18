@@ -10,10 +10,11 @@ import com.rakkateichou.theguardianreader.R
 import com.rakkateichou.theguardianreader.TheGuardianReaderApp
 import com.rakkateichou.theguardianreader.data.model.Section
 import com.rakkateichou.theguardianreader.databinding.FragmentSectionBinding
+import timber.log.Timber
 
-class SectionFragment(private val section: Section) : Fragment(R.layout.fragment_section) {
+class SectionFragment : Fragment(R.layout.fragment_section) {
 
-    constructor() : this(DEFAULT_SECTION)
+    private var section: Section = DEFAULT_SECTION
 
     lateinit var viewModel: SectionViewModel
 
@@ -26,6 +27,11 @@ class SectionFragment(private val section: Section) : Fragment(R.layout.fragment
 
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentSectionBinding.bind(view)
+
+        // why not passing section into a constructor:
+        // when switching night mode the fragment anyway recreated using empty constructor
+        // so the only way to know in which position the fragment is from the tag
+        section = Section.fromInt(tag!![1].digitToInt())?: DEFAULT_SECTION
 
         val adapter = NewsAdapter(section)
 

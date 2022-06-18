@@ -7,8 +7,8 @@
     <color name="highlight_main">#ffe500</color>
     <color name="highlight_dark">#ffbb50</color>
 
-<!--to make status bar consistent with action bar in dark mode-->
-    <color name="dark_status">#282828</color>
+<!--the color of status and action bars in night mode-->
+    <color name="dark_top">#282828</color>
 
     <color name="brightness_7">#121212</color>
     <color name="brightness_20">#333333</color>

@@ -1,20 +1,13 @@
 package com.rakkateichou.theguardianreader.ui.main
 
 import android.animation.LayoutTransition
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
-import com.rakkateichou.theguardianreader.Constants.DEFAULT_SECTION
 import com.rakkateichou.theguardianreader.R
 import com.rakkateichou.theguardianreader.TheGuardianReaderApp
-import com.rakkateichou.theguardianreader.util.changeSelectedColor
 import com.rakkateichou.theguardianreader.databinding.ActivityMainBinding
-import com.rakkateichou.theguardianreader.data.model.Section
-import com.rakkateichou.theguardianreader.util.findInViewPager
 import com.rakkateichou.theguardianreader.util.isNightMode
 import javax.inject.Inject
 
@@ -22,7 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
-    @Inject lateinit var mainViewModel: MainViewModel
+    @Inject
+    lateinit var mainViewModel: MainViewModel
 
     private var isSearchBarOpen = false
 
@@ -36,38 +30,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupUi() {
         // to make status bar consistent with action bar in dark mode
-        if(isNightMode()) {
-            window.statusBarColor = ResourcesCompat.getColor(resources, R.color.dark_status, null)
+        if (isNightMode()) {
+            window.statusBarColor = ResourcesCompat.getColor(resources, R.color.dark_top, null)
         }
 
-        binding.mainViewPager.apply {
-            adapter = CategoryPagerAdapter(this@MainActivity)
-            offscreenPageLimit = Section.values().size - 1
-        }
-
-        TabLayoutMediator(binding.mainTabLayout, binding.mainViewPager) { tab, position ->
-            tab.text = Section.fromInt(position)?.name ?: DEFAULT_SECTION.name
-        }.attach()
-
-        // setting up tab layout
-        binding.mainTabLayout.apply {
-            addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-                override fun onTabSelected(tab: TabLayout.Tab) {
-                    val currentSection = Section.fromInt(tab.position) ?: DEFAULT_SECTION
-                    changeSelectedColor(currentSection.mainColor)
-                    mainViewModel.setCurrentSection(currentSection)
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab) {}
-                override fun onTabReselected(tab: TabLayout.Tab) {
-                    (supportFragmentManager.findInViewPager(tab.position) as SectionFragment)
-                        .updateNews()
-                }
-
-            })
-//             reselecting current tab to the first one to update colors
-            selectTab(getTabAt(1))
-            selectTab(getTabAt(0))
+        supportFragmentManager.apply {
+            findFragmentByTag(MAIN_FRAGMENT_TAG) ?: beginTransaction()
+                .add(binding.mainFragmentContainer.id, MainFragment(), MAIN_FRAGMENT_TAG)
+                .commitNow()
         }
 
         // enabling changing transition and disabling appearing transition
@@ -102,6 +72,11 @@ class MainActivity : AppCompatActivity() {
         if (isSearchBarOpen) closeSearch()
         else super.onBackPressed()
     }
+
+    companion object {
+        private const val MAIN_FRAGMENT_TAG = "main_fragment"
+    }
+
 }
 
 

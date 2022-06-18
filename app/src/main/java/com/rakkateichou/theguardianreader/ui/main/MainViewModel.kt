@@ -9,10 +9,11 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor(private val newsRepository: NewsRepository) : ViewModel() {
 
-    private val currentSection = MutableLiveData(DEFAULT_SECTION)
+    private val _currentSection = MutableLiveData(DEFAULT_SECTION)
+    val currentSection get() = _currentSection.value!!
 
     fun setCurrentSection(section: Section) {
-        currentSection.value = section
+        _currentSection.value = section
     }
 
 }
