@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?colorPrimarySurface">
+    android:background="?colorSurface">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/fragment_article_app_bar_layout"
@@ -47,6 +47,7 @@
 
         <TextView
             android:id="@+id/fragment_article_content"
+            style="@style/RobotoSlabStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

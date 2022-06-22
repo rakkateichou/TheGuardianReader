@@ -1,6 +1,8 @@
 package com.rakkateichou.theguardianreader.ui.article
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
@@ -21,6 +23,11 @@ class ArticleFragment(
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding!!
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentArticleBinding.bind(view)
@@ -38,6 +45,11 @@ class ArticleFragment(
             fragmentArticleContent.text =
                 HtmlCompat.fromHtml(completeBody, HtmlCompat.FROM_HTML_MODE_COMPACT)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.article_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onDestroy() {

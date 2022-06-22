@@ -14,10 +14,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_marginTop="5dp"
         android:id="@+id/image_card_image"
         android:layout_width="120dp"
         android:layout_height="0dp"
+        android:layout_marginTop="5dp"
         android:maxHeight="60dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,6 +26,7 @@
 
     <TextView
         android:id="@+id/image_card_title"
+        style="@style/RobotoSlabStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -49,6 +50,7 @@
 
     <TextView
         android:id="@+id/image_card_comment_counter"
+        style="@style/RobotoSlabStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="2dp"

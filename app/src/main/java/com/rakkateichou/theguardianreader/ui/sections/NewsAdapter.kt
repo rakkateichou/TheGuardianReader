@@ -1,4 +1,4 @@
-package com.rakkateichou.theguardianreader.ui.main
+package com.rakkateichou.theguardianreader.ui.sections
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

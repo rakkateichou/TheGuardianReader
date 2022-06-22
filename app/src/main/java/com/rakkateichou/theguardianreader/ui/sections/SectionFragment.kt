@@ -1,4 +1,4 @@
-package com.rakkateichou.theguardianreader.ui.main
+package com.rakkateichou.theguardianreader.ui.sections
 
 import android.os.Bundle
 import android.view.View
@@ -11,6 +11,7 @@ import com.rakkateichou.theguardianreader.TheGuardianReaderApp
 import com.rakkateichou.theguardianreader.data.model.Section
 import com.rakkateichou.theguardianreader.databinding.FragmentSectionBinding
 import com.rakkateichou.theguardianreader.ui.article.ArticleFragment
+import timber.log.Timber
 
 class SectionFragment : Fragment(R.layout.fragment_section) {
 
@@ -39,8 +40,8 @@ class SectionFragment : Fragment(R.layout.fragment_section) {
                     android.R.anim.fade_in, android.R.anim.fade_out,
                     android.R.anim.fade_in, android.R.anim.fade_out
                 )
-                .add(R.id.main_fragment_container, ArticleFragment(newsEntry, cardType))
-                .addToBackStack("")
+                .replace(R.id.main_fragment_container, ArticleFragment(newsEntry, cardType))
+                .addToBackStack(null)
                 .commit()
         }
 

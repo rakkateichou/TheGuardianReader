@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">@android:color/darker_gray</item>
         <item name="colorPrimaryVariant">@color/brand_dark</item>
         <item name="colorOnPrimary">@color/brightness_100</item>
+        <item name="android:textColorPrimary">@color/brightness_100</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/brand_pastel</item>
         <item name="colorSecondaryVariant">@color/brand_main</item>
@@ -15,10 +16,17 @@
         <item name="android:statusBarColor" >?attr/colorPrimarySurface</item>
 <!--        <item name="android:windowTranslucentStatus">true</item>-->
         <!-- Customize your theme here. -->
-        <item name="android:textViewStyle">@style/RobotoSlabStyle</item>
+<!--        <item name="android:textViewStyle">@style/RobotoSlabStyle</item>-->
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
     </style>
 
     <style name="RobotoSlabStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/robotoslab</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
     </style>
 </resources>

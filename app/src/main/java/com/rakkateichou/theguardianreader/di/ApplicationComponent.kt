@@ -1,8 +1,7 @@
 package com.rakkateichou.theguardianreader.di
 
 import com.rakkateichou.theguardianreader.ui.main.MainActivity
-import com.rakkateichou.theguardianreader.ui.main.SectionFragment
-import com.rakkateichou.theguardianreader.ui.main.SectionViewModel
+import com.rakkateichou.theguardianreader.ui.sections.SectionViewModel
 import dagger.Component
 import javax.inject.Singleton
 

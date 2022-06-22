@@ -2,13 +2,14 @@ package com.rakkateichou.theguardianreader.ui.main
 
 import android.animation.LayoutTransition
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
 import com.rakkateichou.theguardianreader.R
 import com.rakkateichou.theguardianreader.TheGuardianReaderApp
 import com.rakkateichou.theguardianreader.databinding.ActivityMainBinding
-import com.rakkateichou.theguardianreader.util.isNightMode
+import com.rakkateichou.theguardianreader.ui.sections.SectionsContainerFragment
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -25,13 +26,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.mainToolbar)
         setupUi()
     }
 
     private fun setupUi() {
         supportFragmentManager.apply {
             findFragmentByTag(MAIN_FRAGMENT_TAG) ?: beginTransaction()
-                .add(binding.mainFragmentContainer.id, MainFragment(), MAIN_FRAGMENT_TAG)
+                .add(binding.mainFragmentContainer.id, SectionsContainerFragment(), MAIN_FRAGMENT_TAG)
                 .commitNow()
         }
 
@@ -44,10 +46,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         // setting up search button
-        binding.toolbarSearchIcon.setOnClickListener { if (!isSearchBarOpen) openSearch() }
+//        binding.toolbarSearchIcon.setOnClickListener { if (!isSearchBarOpen) openSearch() }
 
         // setting up apppager
 //        binding.mainViewPager.adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun openSearch() {

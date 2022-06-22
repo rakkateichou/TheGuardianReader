@@ -22,7 +22,7 @@ class NetworkModule {
         .addInterceptor { chain ->
             val original = chain.request()
             val url = original.url().newBuilder()
-                .addQueryParameter("order-by", "relevance") // order by relevance by default
+//                .addQueryParameter("order-by", "relevance") // order by relevance by default
                 .addQueryParameter("show-fields",
                     "headline,byline,thumbnail,commentable,liveBloggingNow") // additional info fields
                 .addQueryParameter("show-tags", "tone") // a way to determine importance of the story

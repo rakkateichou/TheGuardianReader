@@ -6,4 +6,13 @@
     <string name="sport_label">Sport</string>
     <string name="culture_label">Culture</string>
     <string name="lifestyle_label">Lifestyle</string>
+
+    <string name="search_item">Search</string>
+    <string name="profile_item">Profile</string>
+    <string name="order_by_group">Sort by</string>
+    <string name="order_by_newest_item">Newest</string>
+    <string name="order_by_oldest_item">Oldest</string>
+    <string name="order_by_relevance">Relevance</string>
+    <string name="refresh_item">Refresh</string>
+    <string name="open_in_item">Open in</string>
 </resources>

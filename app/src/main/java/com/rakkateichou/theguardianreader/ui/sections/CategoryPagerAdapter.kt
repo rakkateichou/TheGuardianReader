@@ -1,4 +1,4 @@
-package com.rakkateichou.theguardianreader.ui.main
+package com.rakkateichou.theguardianreader.ui.sections
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
