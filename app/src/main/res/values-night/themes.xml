@@ -13,7 +13,10 @@
         <!-- Status bar color. -->
         <!--        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>-->
         <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowTranslucentNavigation">true</item>
         <!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <!-- toolbar menu icons are white -->
+        <item name="android:textColorSecondary">@color/brightness_100</item>
         <!-- Customize your theme here. -->
         <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
     </style>

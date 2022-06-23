@@ -15,7 +15,9 @@
             android:id="@+id/fragment_article_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/dark_top"
+            app:collapsedTitleTextColor="?colorOnPrimary"
+            app:contentScrim="?colorPrimary"
+            app:expandedTitleTextColor="?colorOnPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:maxLines="5"
             app:titleCollapseMode="scale"
@@ -26,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:adjustViewBounds="true"
-                android:background="@color/dark_top"
+                android:background="?colorPrimary"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
 
@@ -52,7 +54,7 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="2sp"
             android:padding="10dp"
-            tools:text="@tools:sample/lorem/random"/>
+            tools:text="@tools:sample/lorem/random" />
 
     </androidx.core.widget.NestedScrollView>
 

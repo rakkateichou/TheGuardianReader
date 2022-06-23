@@ -5,13 +5,11 @@
         android:id="@+id/search_item"
         android:icon="@drawable/search_icon"
         android:title="@string/search_item"
-        app:iconTint="@color/brightness_100"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/profile_item"
         android:icon="@drawable/account_circle"
         android:title="@string/profile_item"
-        app:iconTint="@color/brightness_100"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/refresh_item"

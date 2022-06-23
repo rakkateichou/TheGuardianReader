@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.TheGuardianReader" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -6,17 +6,19 @@
         <item name="colorPrimaryDark">@android:color/darker_gray</item>
         <item name="colorPrimaryVariant">@color/brand_dark</item>
         <item name="colorOnPrimary">@color/brightness_100</item>
-        <item name="android:textColorPrimary">@color/brightness_100</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/brand_pastel</item>
         <item name="colorSecondaryVariant">@color/brand_main</item>
         <item name="colorOnSecondary">@color/brightness_100</item>
+        <!-- toolbar menu icons are white -->
+        <item name="android:textColorSecondary">@color/brightness_100</item>
         <!-- Status bar color. -->
-<!--        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>-->
-        <item name="android:statusBarColor" >?attr/colorPrimarySurface</item>
-<!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <!--        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>-->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
         <!-- Customize your theme here. -->
-<!--        <item name="android:textViewStyle">@style/RobotoSlabStyle</item>-->
+        <!--        <item name="android:textViewStyle">@style/RobotoSlabStyle</item>-->
         <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
     </style>
 
