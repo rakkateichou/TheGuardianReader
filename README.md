@@ -25,6 +25,7 @@ An convenient The Guardian app
 </div>
 
 ## Used technologies
+- MVVM architecture
 - Dagger 2
 - Retrofit 2
 - Paging 3
