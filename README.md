@@ -23,3 +23,11 @@ An convenient The Guardian app
 <img src="https://raw.githubusercontent.com/rakkateichou/TheGuardianReader/main/screenshots/dark_sport_section.png" alt="Sport dark" width="200"/>
 <img src="https://raw.githubusercontent.com/rakkateichou/TheGuardianReader/main/screenshots/dark_sport_article.png" alt="Sport dark article" width="200"/>
 </div>
+
+## Used technologies
+- Dagger 2
+- Retrofit 2
+- Paging 3
+- Glide
+- Kotlin coroutines
+- Timber
