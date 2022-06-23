@@ -1,5 +1,5 @@
 # TheGuardianReader
-An convenient The Guardian app
+📰 An convenient The Guardian app
 
 ## Features
 - Read your favorite articles in the convinient app
