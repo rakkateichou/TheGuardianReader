@@ -11,11 +11,13 @@ An convenient The Guardian app
 - Log into your The Guardian account
 
 ## Screenshots
+
 #### Light theme
 <div>
 <img src="https://raw.githubusercontent.com/rakkateichou/TheGuardianReader/main/screenshots/light_opinion_section.png" alt="Opinion light" width="200"/>
 <img src="https://raw.githubusercontent.com/rakkateichou/TheGuardianReader/main/screenshots/light_opinion_article.png" alt="Opinion light article" width="200"/>
 </div>
+
 #### Dark theme
 <div>
 <img src="https://raw.githubusercontent.com/rakkateichou/TheGuardianReader/main/screenshots/dark_sport_section.png" alt="Sport dark" width="200"/>
