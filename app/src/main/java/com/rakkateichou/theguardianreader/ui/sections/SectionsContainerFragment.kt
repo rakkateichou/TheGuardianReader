@@ -19,7 +19,7 @@ import com.rakkateichou.theguardianreader.util.findInViewPager
 class SectionsContainerFragment : Fragment(R.layout.fragment_main) {
 
     private var _binding: FragmentMainBinding? = null
-    private val binding get() = _binding!!
+    val binding get() = _binding!!
 
     var selectingTabFromCode = false
 

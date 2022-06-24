@@ -3,7 +3,6 @@ package com.rakkateichou.theguardianreader.ui.main
 import android.animation.LayoutTransition
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.rakkateichou.theguardianreader.R
@@ -32,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupUi() {
         supportFragmentManager.apply {
-            findFragmentByTag(MAIN_FRAGMENT_TAG) ?: beginTransaction()
-                .add(binding.mainFragmentContainer.id, SectionsContainerFragment(), MAIN_FRAGMENT_TAG)
+            findFragmentByTag(SECTIONS_FRAGMENT_TAG) ?: beginTransaction()
+                .add(binding.mainFragmentContainer.id, SectionsContainerFragment(), SECTIONS_FRAGMENT_TAG)
                 .commitNow()
         }
 
@@ -43,6 +42,14 @@ class MainActivity : AppCompatActivity() {
             disableTransitionType(LayoutTransition.APPEARING)
             disableTransitionType(LayoutTransition.DISAPPEARING)
             enableTransitionType(LayoutTransition.CHANGING)
+        }
+
+        binding.toolbarLogo.setOnClickListener {
+            supportFragmentManager.findFragmentByTag(SECTIONS_FRAGMENT_TAG)?.let {
+                (it as SectionsContainerFragment).binding.mainTabLayout.apply {
+                    selectTab(getTabAt(0))
+                }
+            }
         }
 
         // setting up search button
@@ -76,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val MAIN_FRAGMENT_TAG = "main_fragment"
+        private const val SECTIONS_FRAGMENT_TAG = "main_fragment"
     }
 
 }
