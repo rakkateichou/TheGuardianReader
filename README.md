@@ -2,7 +2,7 @@
 📰 An convenient The Guardian app
 
 ## Features
-- Read your favorite articles in the convinient app
+- Read your favorite articles in the convenient app
 - Refresh the sections to get the most recent news updates
 #### [TODO]
 - Sort articles by their newness or relevance
